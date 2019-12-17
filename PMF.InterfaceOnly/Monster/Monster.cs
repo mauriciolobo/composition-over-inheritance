@@ -1,4 +1,4 @@
-namespace PMF.InterfaceOnly
+namespace PMF.InterfaceOnly.Monster
 {
     public abstract class Monster
     {
@@ -7,6 +7,6 @@ namespace PMF.InterfaceOnly
             HitPoints = hitPoints;
         }
 
-        public int HitPoints { get; set; }
+        public int HitPoints { get; }
     }
 }

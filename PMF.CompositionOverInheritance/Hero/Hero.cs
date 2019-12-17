@@ -1,86 +1,65 @@
 using System;
 using System.Collections.Generic;
+using PMF.CompositionOverInheritance.Monster;
 
-namespace PMF.CompositionOverInheritance
+namespace PMF.CompositionOverInheritance.Hero
 {
-    public class Monster
+    public class Hero
     {
-        public Monster(int hitPoints)
+        public Hero(int hitPoints)
         {
             HitPoints = hitPoints;
             AttackTypes = new Dictionary<AttackType, int>();
         }
 
-        public int HitPoints { get; set; }
-        public Dictionary<AttackType, int> AttackTypes { get; set; }
-        public bool CanBite => AttackTypes.ContainsKey(AttackType.Biting);
+        public int HitPoints { get; }
+        public Dictionary<AttackType, int> AttackTypes { get; }
         public bool CanKick => AttackTypes.ContainsKey(AttackType.Kicking);
         public bool CanPunch => AttackTypes.ContainsKey(AttackType.Punching);
-        public bool CanSpit => AttackTypes.ContainsKey(AttackType.Spitting);
- 
+        public bool CanTektektuguem => AttackTypes.ContainsKey(AttackType.Tektektugueming);
+
         public void AddAttackType(AttackType attackType, int amountOfDamage)
         {
             AttackTypes[attackType] = amountOfDamage;
         }
 
-        public int BiteDamage
-        {
-            get
-            {
-                if(CanBite)
-                {
-                    return AttackTypes[AttackType.Biting];
-                }
- 
-                throw new NotSupportedException("This monster cannot bite.");
-            }
-        }
- 
         public int KickDamage
         {
             get
             {
-                if(CanKick)
+                if (CanKick)
                 {
                     return AttackTypes[AttackType.Kicking];
                 }
- 
+
                 throw new NotSupportedException("This monster cannot kick.");
             }
         }
- 
+
         public int PunchDamage
         {
             get
             {
-                if(CanPunch)
+                if (CanPunch)
                 {
                     return AttackTypes[AttackType.Punching];
                 }
- 
+
                 throw new NotSupportedException("This monster cannot punch.");
             }
         }
 
-        public int SpitDamage
+        public int TektektuguemDamage
         {
             get
             {
-                if(CanSpit)
+                if (CanTektektuguem)
                 {
-                    return AttackTypes[AttackType.Spitting];
+                    return AttackTypes[AttackType.Tektektugueming];
                 }
 
-                throw new NotSupportedException("This monster cannot spit.");
+                throw new NotSupportedException("This hero cannot tektektuguem.");
             }
         }
-    }
-
-    public enum AttackType
-    {
-        Biting,
-        Kicking,
-        Punching,
-        Spitting
     }
 }

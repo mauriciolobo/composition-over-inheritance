@@ -1,6 +1,8 @@
-namespace PMF.InterfaceOnly
+using PMF.InterfaceOnly.AttackType;
+
+namespace PMF.InterfaceOnly.Monster
 {
-    public class Horse : Monster, IMonsterCanBite, IMonsterCanKick
+    public class Horse : Monster, ICanBite, ICanKick
     {
         public Horse(int hitPoints) : base(hitPoints) { }
 

@@ -1,8 +1,8 @@
 using System;
 
-namespace PMF.CompositionOverInheritance
+namespace PMF.CompositionOverInheritance.Monster
 {
-    public class MonsterFactory
+    public static class MonsterFactory
     {
         public static Monster CreateMonster(MonsterType monsterType)
         {
@@ -44,7 +44,7 @@ namespace PMF.CompositionOverInheritance
                     monster.AddAttackType(AttackType.Punching, 5);
                     break;
                 default:
-                    throw new ArgumentException();
+                    throw new ArgumentOutOfRangeException(nameof(monsterType), monsterType, null);
             }
  
             return monster;

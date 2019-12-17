@@ -1,6 +1,8 @@
-namespace PMF.InterfaceOnly
+using PMF.InterfaceOnly.AttackType;
+
+namespace PMF.InterfaceOnly.Monster
 {
-    public class MikeTyson : Monster, IMonsterCanBite, IMonsterCanPunch
+    public class MikeTyson : Monster, ICanBite, ICanPunch
     {
         public MikeTyson(int hitPoints) : base (hitPoints) { }
 
